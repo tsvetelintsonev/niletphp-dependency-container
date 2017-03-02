@@ -1,0 +1,35 @@
+{
+    "name": "niletphp/dependency-container",
+    "description": "The NiletPHP dependency injection container.",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/tsvetelintsonev/niletphp-dependency-container/issues",
+        "source": "https://github.com/tsvetelintsonev/niletphp-dependency-container"
+    },
+    "authors": [
+        {
+            "name": "Tsvetelin Tsonev",
+            "email": "github.tsonev@yahoo.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nilet\\Components\\Container\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
