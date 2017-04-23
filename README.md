@@ -68,8 +68,10 @@ $dc->instance("Nilet\Foo", $foo);
 Retrieve a concrete. 
 
 ```php
-$dc->get("Nilet\FooInterface");
 $dc->get("Nilet\Foo");
+
+$dc->bindShared("Nilet\FooInterface", "Nilet\Foo");
+$dc->get("Nilet\FooInterface");
 ```
 
 Determine if a given concrete (singleton) has been resolved.
@@ -84,7 +86,7 @@ if ($dc->isResolved("Nilet\FooInterface")) { // evaluates to true
 }
 ```
 
-Determine if a given concrete is shared and not being resolved yet.
+Determine if a given concrete is shared.
 
 ```php
 $dc->share("Nilet\Foo");
@@ -99,18 +101,18 @@ Determine if a given interface is bound.
 
 ```php
 $dc->bind("Nilet\FooInterface", "Nilet\Foo");
-if ($dc->isBound("Nilet\Foo")) { //evaluates to true
+if ($dc->isBound("Nilet\FooInterface")) { //evaluates to true
     // do something
 } else {
     // do something else
 }
 ```
 
-Determine if a given interface is bound/shared and its concrete is not being resolved yet.
+Determine if a given interface is bound/shared.
 
 ```php
 $dc->bindShared("Nilet\FooInterface", "Nilet\Foo");
-if ($dc->isBoundShared("Nilet\Foo")) { //evaluates to true
+if ($dc->isBoundShared("Nilet\FooInterface")) { //evaluates to true
     // do something
 } else {
     // do something else
