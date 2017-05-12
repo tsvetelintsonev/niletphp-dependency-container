@@ -12,7 +12,7 @@ Composer
 ```javascript
 {
     "require": {
-        "niletphp/dependency-container": ">=1.0"
+        "niletphp/dependency-container": ">=v1.0"
     }
 }
 ```
