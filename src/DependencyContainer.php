@@ -93,7 +93,7 @@ class DependencyContainer implements DependencyContainerInterface {
             // Add the \Closure instance to shared, so it can be lazy resolved afterwards.
             $this->shared[$_concrete] = $instance;
         } else {
-            throw new InstanceOfException("Instance parameter should either be a \Closure or instance of " . $concrete);
+            throw new InstanceOfException("Instance parameter should either be a Closure or instance of " . $concrete);
         }
     }
 
@@ -124,6 +124,8 @@ class DependencyContainer implements DependencyContainerInterface {
             $concrete = $this->bindings[$concrete];
         } else if ($this->isBoundShared($concrete)) {
             $concrete = $this->sharedBindings[$concrete];
+        } else if($this->isShared($concrete)) {
+            $concrete = $this->shared[$concrete];
         }
 
         if ($concrete instanceof \Closure) {
